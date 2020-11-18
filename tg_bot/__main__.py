@@ -1,52 +1,49 @@
-# All codes are from SaitamaRobot
-# All credits go to https://github.com/AnimeKaizoku/SaitamaRobot
+# Tutti i codici provengono da SaitamaRobot
+# Tutti i crediti vanno a https://github.com/AnimeKaizoku/SaitamaRobot
 
-import importlib
-import re
-from typing import Optional, List
+import  importlib
+import  re
+dalla  digitazione di  importazione  Opzionale , Elenco
 
-from telegram import Bot, Update, ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, ChatMigrated, TelegramError
-from telegram.ext import CommandHandler, MessageHandler, CallbackQueryHandler, Filters
-from telegram.ext.dispatcher import run_async, DispatcherHandlerStop
-from telegram.utils.helpers import escape_markdown
+dal  telegramma di  importazione  Bot , aggiornamento , ParseMode , InlineKeyboardMarkup , InlineKeyboardButton
+da  telegramma . importazione errori  Unauthorized , BadRequest , TimedOut , NetworkError , ChatMigrated , TelegramError 
+da  telegramma . importazione ext  CommandHandler , MessageHandler , CallbackQueryHandler , Filters 
+da  telegramma . ext . importazione del dispatcher  run_async , DispatcherHandlerStop 
+da  telegramma . utils . aiutanti  importano  escape_markdown
 
-from Manager import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, SUPPORT_CHAT, DONATION_LINK, CERT_PATH, PORT, URL, LOGGER, \
+da  Manager  import  dispatcher , updater , TOKEN , WEBHOOK , OWNER_ID , SUPPORT_CHAT , DONATION_LINK , CERT_PATH , PORT , URL , LOGGER , \
     ALLOW_EXCL
-# needed to dynamically load modules
-# NOTE: Module order is not guaranteed, specify that in the config file!
-from Manager.modules import ALL_MODULES
-from Manager.modules.helper_funcs.chat_status import is_user_admin
-from Manager.modules.helper_funcs.misc import paginate_modules
+# necessario per caricare dinamicamente i moduli
+# NOTA: l'ordine dei moduli non è garantito, specificalo nel file di configurazione!
+da  Manager . i moduli  importano  ALL_MODULES
+da  Manager . moduli . helper_funcs . chat_status  import  is_user_admin
+da  Manager . moduli . helper_funcs . misc  import  paginate_modules
 
-PM_START_TEXT = """
-Hello {}, my name is {}!
+PM_START_TEXT  =  "" "
+Ciao il mio nome è {}!
+Sai quanto a volte è difficile gestire il gruppo, quindi ecco la soluzione per te.
+Il mio proprietario è [DarkLuke] (t.me/DarkLukeclapyou)
+Fai clic su /help 
+"" "
 
-You know how hard it is sometimes to manage group so here is the solution for you.
-
-My owner is [Aditya 🇮🇳](t.me/xditya)
-
-Click /help or Help button below to find out more about how to use me to my full potential.
-"""
-
-HELP_STRINGS = """
-Hey there! My name is *{}*.
-Group Management Bot with advanced features. 
-*Main* commands available:
- - /start: start the bot
- - /help: PM's you this message.
- - /help <module name>: PM's you info about that module.
- - /donate: information about how to donate!
- - /settings:
-   - in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
+HELP_STRINGS  =  "" "
+Ehilà! Il mio nome è *{}*.
+Bot per la gestione dei gruppi con funzionalità avanzate. 
+* Principali * comandi disponibili:
+ - / start: avvia il bot
+ - / help: PM sei tu questo messaggio.
+ - / help <nome modulo>: le informazioni del PM su quel modulo.
+ - / donate: informazioni su come donare!
+ - /impostazioni:
+   - in PM: ti invierà le impostazioni per tutti i moduli supportati.
+   - in un gruppo: ti reindirizzerà a pm, con tutte le impostazioni della chat.
  
-Pls note that this repo is based on Saitama Bot and GroupManager Bot.
-
+Si prega di notare che questo repository è basato su Saitama Bot e GroupManager Bot.
 {}
-And the following:
-""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
-DONATE_STRING = """Heya, glad to hear you want to donate! I'm not accepting any donations right now, still, if needed, drop a thanks to @xditya."""
+E il seguente:
+"" " . format ( dispatcher . bot . first_name , " "  if  not  ALLOW_EXCL  else  " \ n Tutti i comandi possono essere usati con / o!. \ n " )
+DONATE_STRING  =  "" "Heylá, sono felice di sapere che vuoi fare una donazione! Non accetto alcuna donazione in questo momento, ma, se necessario, ringrazia @DarkLukeclapyou." ""
+
 
 IMPORTED = {}
 MIGRATEABLE = []
