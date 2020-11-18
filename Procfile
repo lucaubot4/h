@@ -1,1 +1,1 @@
-worker: python3 -m Manager
+lavoratore: python3 -m tg_bot
