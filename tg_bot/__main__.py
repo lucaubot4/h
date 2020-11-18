@@ -18,8 +18,8 @@ from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
-PM_START_TEXT = ""PM_START_TEXT  =  "" "
-Ciao, mi chiamo {}! Se hai domande su come usarmi, leggi /help.
+PM_START_TEXT  =  ""
+Ciao , mi  chiamo {} !  Se  hai  domande  su  come  usarmi , leggi  /help.
 Sono un bot manager di gruppo costruito in python3.
 "" "
 
