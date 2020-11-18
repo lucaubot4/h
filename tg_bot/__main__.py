@@ -18,9 +18,15 @@ from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
-PM_START_TEXT  =  ""
-Ciao , mi  chiamo {} !  Se  hai  domande  su  come  usarmi , leggi  /help.
-Sono un bot manager di gruppo costruito in python3.
+PM_START_TEXT  =  "PM_START_TEXT  =  "" "
+Ciao, mi chiamo {}! Se hai domande su come usarmi, leggi / aiuto e poi vai su @MarieSupport.
+Sono un bot manager di gruppo costruito in python3, che utilizza la libreria python-telegram-bot, e sono completamente opensource; \
+puoi trovare ciò che mi fa battere il segno [qui] (github.com/PaulSonOfLars/tgbot)!
+Sentiti libero di inviare richieste pull su GitHub o di contattare il mio gruppo di supporto, @MarieSupport, per qualsiasi bug, domanda \
+o richieste di funzionalità che potresti avere :)
+Ho anche un canale di notizie, @MarieNews per annunci su nuove funzionalità, tempi di inattività, ecc.
+Puoi trovare l'elenco dei comandi disponibili con / help.
+Se ti diverti ad usarmi e / o vorresti aiutarmi a sopravvivere in natura, premi / fai una donazione per finanziare / aggiornare il mio VPS!
 "" "
 
 HELP_STRINGS  =  "" "
@@ -38,6 +44,12 @@ le cose in cui posso aiutarti.
 {}
 E il seguente:
 "" " . format ( dispatcher . bot . first_name , " "  if  not  ALLOW_EXCL  else  " \ n Tutti i comandi possono essere usati con / o!. \ n " )
+
+DONATE_STRING  =  "" "Heya, felice di sapere che vuoi fare una donazione!
+C'è voluto molto lavoro perché il mio creatore mi portasse dove sono ora e ogni donazione aiuta \
+motivarlo a rendermi ancora migliore. Tutto il denaro della donazione andrà a un VPS migliore per ospitarmi e / o birra \
+(guarda la sua biografia!). È solo uno studente povero, quindi ogni piccolo aiuto!
+Ci sono due modi per pagarlo; [PayPal] (paypal.me/PaulSonOfLars) o [Monzo] (monzo.me/paulnionvestergaardlarsen). "" ")
 
 
 IMPORTED = {}
